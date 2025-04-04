@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<algorithm>
-#include<cstring> // Ìí¼Ó´ËÍ·ÎÄ¼şÒÔÊ¹ÓÃ strlen º¯Êı
+#include<cstring> // æ·»åŠ æ­¤å¤´æ–‡ä»¶ä»¥ä½¿ç”¨ strlen å‡½æ•°
 #include<cstdio>
 
 using namespace std;
@@ -16,18 +16,18 @@ int main() {
 	}
 	for (int i = 0; i < m; i++) {
 		int x;
-		scanf("%d", &x);//¶ş·ÖxµÄ×ó¶Ëµã
-		int l = 0, r = n - 1;//È·¶¨Çø¼ä·¶Î§
+		scanf("%d", &x);//äºŒåˆ†xçš„å·¦ç«¯ç‚¹
+		int l = 0, r = n - 1;//ç¡®å®šåŒºé—´èŒƒå›´
 		while (l < r) {
-			int mid = l + r >> 1;//ÓÒÒÆ1Î»Ïàµ±ÓÚ³ıÒÔ2
+			int mid = l + r >> 1;//å³ç§»1ä½ç›¸å½“äºé™¤ä»¥2
 			if (q[mid] >= x) r=mid;
 			else l = mid+1;
 		}
 		if (q[l] == x) {
-			printf("%d ", r);//ÓÒ¶ËµãÒ»¶¨ÔÚ[×ó¶Ëµã,n-1]Ö®¼ä
+			printf("%d ", r);//å³ç«¯ç‚¹ä¸€å®šåœ¨[å·¦ç«¯ç‚¹,n-1]ä¹‹é—´
 			while (l < r)
 			{
-				int mid = l + r + 1 >> 1;//ÓÒÒÆ1Î»Ïàµ±ÓÚ³ıÒÔ2£¬ÒòÎªĞ´µÄÊÇl=mid£¬ËùÒÔÒª¼Ó1
+				int mid = l + r + 1 >> 1;//å³ç§»1ä½ç›¸å½“äºé™¤ä»¥2;å› ä¸ºå†™çš„æ˜¯l=midï¼Œæ‰€ä»¥è¦åŠ 1
 				if (q[mid] <= x) l = mid;
 				else r = mid - 1;
 			}
